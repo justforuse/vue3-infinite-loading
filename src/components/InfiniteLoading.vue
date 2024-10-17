@@ -50,6 +50,7 @@
   </div>
 </template>
 <script>
+import { defineComponent } from 'vue'
 import Spinner from './Spinner.vue';
 import config, {
   evt3rdArg, WARNINGS, STATUS, SLOT_STYLES,
@@ -57,8 +58,9 @@ import config, {
 import {
   warn, throttleer, loopTracker, scrollBarStorage, kebabCase, isVisible,
 } from '../utils';
+import eventBus from '../event-bus'
 
-export default {
+export default defineComponent({
   name: 'InfiniteLoading',
   data() {
     return {
@@ -141,6 +143,9 @@ export default {
       this.stateChanger.reset();
     },
   },
+  created() {
+    this.bus = eventBus
+  },
   mounted() {
     this.$watch('forceUseInfiniteWrapper', () => {
       this.scrollParent = this.getScrollParent();
@@ -161,7 +166,7 @@ export default {
       this.scrollParent.addEventListener('scroll', this.scrollHandler, evt3rdArg);
     }, 1);
 
-    this.$on('$InfiniteLoading:loaded', (ev) => {
+    this.bus.$on('$InfiniteLoading:loaded', (ev) => {
       this.isFirstLoad = false;
 
       if (this.direction === 'top') {
@@ -180,7 +185,7 @@ export default {
       }
     });
 
-    this.$on('$InfiniteLoading:complete', (ev) => {
+    this.bus.$on('$InfiniteLoading:complete', (ev) => {
       this.status = STATUS.COMPLETE;
 
       // force re-complation computed properties to fix the problem of get slot text delay
@@ -195,7 +200,7 @@ export default {
       }
     });
 
-    this.$on('$InfiniteLoading:reset', (ev) => {
+    this.bus.$on('$InfiniteLoading:reset', (ev) => {
       this.status = STATUS.READY;
       this.isFirstLoad = true;
       scrollBarStorage.remove(this.scrollParent);
@@ -217,13 +222,13 @@ export default {
      */
     this.stateChanger = {
       loaded: () => {
-        this.$emit('$InfiniteLoading:loaded', { target: this });
+        this.bus.$emit('$InfiniteLoading:loaded', { target: this });
       },
       complete: () => {
-        this.$emit('$InfiniteLoading:complete', { target: this });
+        this.bus.$emit('$InfiniteLoading:complete', { target: this });
       },
       reset: () => {
-        this.$emit('$InfiniteLoading:reset', { target: this });
+        this.bus.$emit('$InfiniteLoading:reset', { target: this });
       },
       error: () => {
         this.status = STATUS.ERROR;
@@ -340,7 +345,7 @@ export default {
       this.scrollParent.removeEventListener('scroll', this.scrollHandler, evt3rdArg);
     }
   },
-};
+})
 </script>
 <style lang="less" scoped>
 @deep: ~'>>>';

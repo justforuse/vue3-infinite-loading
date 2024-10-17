@@ -59,5 +59,3 @@ export default {
 In the script, we use [HN Search API](https://hn.algolia.com/api) and [axios](https://github.com/mzabriskie/axios) to fetch the news data. If the server API returns an array with the news data, we will push it into `list`, record the current page, and tell this plugin through the `$state.loaded` method that we got some data. If the server API returns an empty array, we will tell this plugin through `$state.complete` method that all data has been loaded.
 
 Now, you can get an infinite scroll version of Hacker News, just like the preview on the right.
-
-<preview path="../../examples/pages/start-with-hn.vue"></preview>
