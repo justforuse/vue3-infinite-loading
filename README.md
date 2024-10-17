@@ -1,15 +1,27 @@
-<p align="center"><img width="200" src="http://www.peachis.me/assets/vue-infinite-loading/logo.png"></p>
 <p align="center">
-  <a href="https://travis-ci.org/PeachScript/vue-infinite-loading"><img src="https://img.shields.io/travis/PeachScript/vue-infinite-loading/master.svg"></a>
-  <a href="https://codecov.io/github/PeachScript/vue-infinite-loading?branch=master"><img src="https://img.shields.io/codecov/c/github/PeachScript/vue-infinite-loading/master.svg"></a>
-  <a href="https://www.npmjs.com/package/vue-infinite-loading"><img src="https://img.shields.io/npm/dm/vue-infinite-loading.svg"></a>
-  <a href="https://www.npmjs.com/package/vue-infinite-loading"><img src="https://img.shields.io/npm/v/vue-infinite-loading.svg"></a>
-  <a href="https://www.npmjs.com/package/vue-infinite-loading"><img src="https://img.shields.io/npm/l/vue-infinite-loading.svg"></a>
+  <img src="https://user-images.githubusercontent.com/11868477/202899419-06a20089-c6ea-4cf4-bf2f-374eb1b20b71.png" height="150">
 </p>
-<p align="center"><img src="http://www.peachis.me/assets/vue-infinite-loading/demo.gif"></p>
+
+<h1 align="center">
+Vue3-Infinite-Loading
+</h1>
+
+<p align="center">
+Infinite loading library for Vue 3.
+<p>
+
+<p align="center">
+  <a href="https://www.npmjs.com/package/vue3-infinite-loading"><img src="https://img.shields.io/npm/v/vue3-infinite-loading.svg"></a>
+  <a href="https://www.npmjs.com/package/vue3-infinite-loading"><img src="https://img.shields.io/npm/dm/vue3-infinite-loading.svg"></a>
+  <a href="https://www.npmjs.com/package/vue3-infinite-loading"><img src="https://img.shields.io/npm/l/vue3-infinite-loading.svg"></a>
+</p>
+
+
+> Fork from [vue-infinite-loading](https://github.com/PeachScript/vue-infinite-loading), and keep the same api.
+
 
 ## Intro
-An infinite scroll plugin for Vue.js, to help you implement an infinite scroll list more easily.
+An infinite scroll plugin for Vue 3, to help you implement an infinite scroll list more easily.
 
 ## Usage
 
@@ -23,5 +35,6 @@ npm i @codog/vue3-infinite-loading
 - 2-directional support
 - Load result message display
 
+
 ## Usage & Guide
-To check out live examples and docs, visit [Vue-infinite-loading GitHub Pages](https://peachscript.github.io/vue-infinite-loading/).
+To check out live examples and docs, visit the [doc site](https://vue3-infinite-loading.vercel.app/).
