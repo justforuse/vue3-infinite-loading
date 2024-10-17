@@ -11,9 +11,9 @@ Infinite loading library for Vue 3.
 <p>
 
 <p align="center">
-  <a href="https://www.npmjs.com/package/vue3-infinite-loading"><img src="https://img.shields.io/npm/v/vue3-infinite-loading.svg"></a>
-  <a href="https://www.npmjs.com/package/vue3-infinite-loading"><img src="https://img.shields.io/npm/dm/vue3-infinite-loading.svg"></a>
-  <a href="https://www.npmjs.com/package/vue3-infinite-loading"><img src="https://img.shields.io/npm/l/vue3-infinite-loading.svg"></a>
+  <a href="https://www.npmjs.com/package/@codog/vue3-infinite-loading"><img src="https://img.shields.io/npm/v/@codog/vue3-infinite-loading.svg"></a>
+  <a href="https://www.npmjs.com/package/@codog/vue3-infinite-loading"><img src="https://img.shields.io/npm/dm/@codog/vue3-infinite-loading.svg"></a>
+  <a href="https://www.npmjs.com/package/@codog/vue3-infinite-loading"><img src="https://img.shields.io/npm/l/@codog/vue3-infinite-loading.svg"></a>
 </p>
 
 
