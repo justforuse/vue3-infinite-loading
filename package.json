@@ -1,17 +1,17 @@
 {
-  "name": "vue-infinite-loading",
-  "version": "2.4.5",
+  "name": "@codog/vue3-infinite-loading",
+  "version": "0.0.1",
   "description": "An infinite scroll plugin for Vue.js",
-  "main": "dist/vue-infinite-loading.js",
-  "typings": "types/index.d.ts",
+  "main": "./lib/index.umd.js",
+  "type": "module",
+  "module": "./lib/index.mjs",
   "files": [
     "lib",
-    "types/*.d.ts",
     "src"
   ],
   "author": {
-    "name": "PeachScript",
-    "email": "scdzwyxst@gmail.com"
+    "name": "Allen",
+    "email": "allenforuse@gmail.com"
   },
   "scripts": {
     "serve": "vite",
