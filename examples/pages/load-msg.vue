@@ -38,7 +38,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import InfiniteLoading from '../../src'
+import InfiniteLoading from '../../lib'
 
 const type = ref('spinners')
 const spinner = ref('default')
@@ -127,7 +127,6 @@ const changeSpinner = (v) => {
   }
 
   button {
-    float: left;
     margin: 8px 4px;
     min-width: 88px;
     padding: 8px 14px;

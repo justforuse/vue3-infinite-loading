@@ -2,6 +2,8 @@ import path from "node:path";
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 
+// @deprecated, pls use rollup to build library
+
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [vue()],
@@ -11,7 +13,7 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: 'lib',
+    outDir: 'lib2',
     lib: {
       // Could also be a dictionary or array of multiple entry points
       entry: path.resolve(__dirname, "src/index.js"),

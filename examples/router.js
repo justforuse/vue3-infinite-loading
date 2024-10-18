@@ -5,7 +5,7 @@ import LoadMsg from './pages/load-msg.vue'
 import UseELement from './pages/use-element.vue'
 
 const routes = [
-  // { path: '/', component: HomeView },
+  { path: '/', redirect: '/start-with-hn' },
   { path: '/start-with-hn', component: StartWithHn },
   { path: '/load-msg', component: LoadMsg },
   { path: '/use-element', component: UseELement },

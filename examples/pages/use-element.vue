@@ -26,7 +26,7 @@
 import { ref } from 'vue'
 import axios from 'axios'
 // import InfiniteLoading from '@'
-import InfiniteLoading from '../../src'
+import InfiniteLoading from '../../lib'
 import { ElTable, ElTableColumn } from 'element-plus'
 import 'element-plus/es/components/table/style/css'
 
