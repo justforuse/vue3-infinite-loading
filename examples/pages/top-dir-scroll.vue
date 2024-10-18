@@ -36,7 +36,7 @@
 import { ref } from 'vue'
 import axios from 'axios'
 // import InfiniteLoading from '@'
-import InfiniteLoading from '../../src'
+import InfiniteLoading from '../../lib'
 
 const page = ref(0)
 const list = ref([])
