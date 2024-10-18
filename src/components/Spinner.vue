@@ -42,9 +42,7 @@ const SPINNERS = {
   WAVEDOTS: {
     render() {
       return h('span', {
-        attrs: {
-          class: 'loading-wave-dots',
-        },
+        class: 'loading-wave-dots'
       }, Array.apply(Array, Array(5)).map(() => h('span', {
         class: 'wave-item'
       })));

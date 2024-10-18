@@ -4,6 +4,13 @@
       <img src="https://news.ycombinator.com/y18.svg">
     </a>
     <span>Hacker News</span>
+    <select v-model="newsType" @change="changeType()">
+      <option value="story">Story</option>
+      <option value="poll">Poll</option>
+      <option value="show_hn">Show hn</option>
+      <option value="ask_hn">Ask hn</option>
+      <option value="front_page">Front page</option>
+    </select>
   </header>
   <div class="container">
     <div
@@ -26,7 +33,7 @@
           v-text="`${item.num_comments} comments`"></a>
       </p>
     </div>
-    <infinite-loading @infinite="infiniteHandler"></infinite-loading>
+    <infinite-loading :identifier="infiniteId" @infinite="infiniteHandler"></infinite-loading>
   </div>
 </template>
 
@@ -40,6 +47,8 @@ import InfiniteLoading from '../../src'
 const page = ref(0)
 const list = ref([])
 const api = '//hn.algolia.com/api/v1/search_by_date?tags=story';
+const newsType = ref('story')
+const infiniteId = ref(new Date())
 
 const infiniteHandler = ($state) => {
   axios.get(api, {
@@ -56,10 +65,15 @@ const infiniteHandler = ($state) => {
     }
   });
 }
+
+const changeType = () => {
+  page.value = 1
+  list.value = []
+  infiniteId.value += 1
+}
 </script>
 
 <style lang="scss" scoped>
-
 .hacker-news-header {
   /* position: fixed; */
   top: 0;
@@ -80,6 +94,14 @@ const infiniteHandler = ($state) => {
     font-size: 14px;
     font-weight: bold;
     vertical-align: middle;
+  }
+
+  select {
+    float: right;
+    color: #fff;
+    background-color: transparent;
+    border: 1px solid #fff;
+    outline: none;
   }
 }
 
