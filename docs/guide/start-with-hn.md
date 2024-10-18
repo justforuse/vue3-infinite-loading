@@ -60,4 +60,6 @@ In the script, we use [HN Search API](https://hn.algolia.com/api) and [axios](ht
 
 Now, you can get an infinite scroll version of Hacker News, just like the preview on the right.
 
+## Demo
+
 <preview path="../../examples/pages/start-with-hn.vue"></preview>

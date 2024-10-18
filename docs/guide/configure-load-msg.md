@@ -18,17 +18,19 @@ You can preview all built-in spinner types on the right. Please use other ways i
 
 ## Via `v-slot` Directive
 
-::: warning
-Vue.js [deprecated slot special attributes](https://vuejs.org/v2/api/#slot-deprecated) after v2.6.0, it is recommended to use the [v-slot directive](https://vuejs.org/v2/api/#v-slot).
-:::
-
-We can use the [`v-slot` directive] (https:// Vuejs.org/v2/api/#v-slot) to configure them:
+We can use the [`v-slot` directive] (https://vuejs.org/guide/components/slots.html) to configure them:
 
 ``` html
 <infinite-loading>
-  <div v-slot:spinner>Loading...</div>
-  <div v-slot:no-more>No more message</div>
-  <div v-slot:no-results>No results message</div>
+  <template #spinner>
+    <div>Loading...</div>
+  <template>
+  <template #no-more>
+    <div>No more message</div>
+  <template>
+  <template #no-results>
+    <div>No results message</div>
+  <template>
 </infinite-loading>
 ```
 
@@ -36,9 +38,11 @@ Unlike other slots, the default value for the `error` slot will provide a retry 
 
 ``` html
 <infinite-loading>
-  <div v-slot:error="{ trigger }">
-    Error message, click <a href="#retry" @click.prevent="trigger">here</a> to retry
-  </div>
+  <template #error="{ trigger }">
+    <div>
+      Error message, click <a href="#retry" @click.prevent="trigger">here</a> to retry
+    </div>
+  </template>
 </infinite-loading>
 ```
 
@@ -104,7 +108,7 @@ I almost forgot, if you want to configure the slot content globally via the plug
 
 ``` js
 import Vue from 'vue';
-import InfiniteLoading from 'vue-infinite-loading';
+import InfiniteLoading from '@codog/vue3-infinite-loading';
 import InfiniteError from 'path/to/your/components/InfiniteError',
 
 Vue.use(InfiniteLoading, {
@@ -122,3 +126,7 @@ Vue.use(InfiniteLoading, {
   },
 });
 ```
+
+## Demo
+
+<preview path="../../examples/pages/load-msg.vue"></preview>

@@ -8,7 +8,7 @@ Simply pass an object containing the `props`/`settings` field to configure them.
 
 ``` js
 import Vue from 'vue';
-import InfiniteLoading from 'vue-infinite-loading';
+import InfiniteLoading from '@codog/vue3-infinite-loading';
 
 Vue.use(InfiniteLoading, {
   props: {
@@ -28,7 +28,7 @@ Unlike properties and settings, slot options can be either a string or a `Vue Co
 
 ``` js
 import Vue from 'vue';
-import InfiniteLoading from 'vue-infinite-loading';
+import InfiniteLoading from '@codog/vue3-infinite-loading';
 import InfiniteError from 'path/to/your/components/InfiniteError';
 
 Vue.use(InfiniteLoading, {

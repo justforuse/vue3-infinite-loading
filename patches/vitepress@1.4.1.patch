@@ -1,0 +1,19 @@
+diff --git a/dist/client/theme-default/styles/base.css b/dist/client/theme-default/styles/base.css
+index 8041b6bc37a2022dcd22c015611ac7fbb9405b13..20d8fa0982d66a33eb9a71061bfc1caa57bd531b 100644
+--- a/dist/client/theme-default/styles/base.css
++++ b/dist/client/theme-default/styles/base.css	
+@@ -1,4 +1,4 @@
+-@media (prefers-reduced-motion: reduce) {
++/* @media (prefers-reduced-motion: reduce) {
+   *,
+   ::before,
+   ::after {
+@@ -10,7 +10,7 @@
+     transition-duration: 0s !important;
+     transition-delay: 0s !important;
+   }
+-}
++} */
+ 
+ *,
+ ::before,

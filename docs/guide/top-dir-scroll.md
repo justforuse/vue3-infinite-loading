@@ -53,3 +53,7 @@ export default {
 ```
 
 The script part is almost the same as the [basic Hacker News](./start-with-hn.md). The only difference is that we reverse the news data from the server and unshift it into the `list`. That's it! This plugin will do the remaining work, isn't it very easy?
+
+## Demo
+
+<preview path="../../examples/pages/top-dir-scroll.vue"></preview>

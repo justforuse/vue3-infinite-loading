@@ -5,14 +5,11 @@ layout: home
 hero:
   name: "Vue3 Infinite Loading"
   text: "Doc site for Vue3 Infinite Loading"
-  tagline: My great project tagline
+  tagline: Document with demos
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
-    - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: Get started
+      link: /guide/README
 
 features:
   - title: Feature A
@@ -22,4 +19,3 @@ features:
   - title: Feature C
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
-

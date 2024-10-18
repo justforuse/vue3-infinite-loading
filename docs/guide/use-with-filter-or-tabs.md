@@ -66,3 +66,7 @@ export default {
 In the script, we set default values for the `select` and `identifier` properties, then add the type parameter in the API request logic, and we create the `changeType` method to reset the list data and infinite loading component. Please note, we must change the `identifier` property *after* we empty the `list`. Otherwise, the component may not trigger the `infinite` event immediately after reset.
 
 That's all, you're done!
+
+## Demo
+
+<preview path="../../examples/pages/filter-or-tabs.vue"></preview>

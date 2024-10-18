@@ -1,6 +1,6 @@
 {
   "name": "@codog/vue3-infinite-loading",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "An infinite scroll plugin for Vue.js",
   "main": "./lib/index.umd.js",
   "type": "module",
@@ -61,6 +61,7 @@
     "babel-plugin-istanbul": "^5.0.1",
     "chai": "^3.5.0",
     "css-loader": "^0.28.4",
+    "element-plus": "^2.8.5",
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-formatter-friendly": "^6.0.0",
@@ -93,7 +94,6 @@
     "vue-loader": "^15.7.0",
     "vue-router": "^4.4.5",
     "vue-template-compiler": "^2.6.10",
-    "vuepress": "^1.0.0-alpha.23",
     "webpack": "^4.17.2",
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.8"
@@ -123,6 +123,11 @@
           "deps"
         ]
       ]
+    }
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "vitepress@1.4.1": "patches/vitepress@1.4.1.patch"
     }
   }
 }

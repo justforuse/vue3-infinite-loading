@@ -26,11 +26,11 @@ export default defineConfig({
         items: [
           { text: 'Install', link: '/guide/README'},
           { text: 'Start With Hacker News', link: '/guide/start-with-hn'},
-          { text: '', link: '/guide/use-with-filter-or-tabs'},
-          { text: '', link: '/guide/top-dir-scroll'},
-          { text: '', link: '/guide/use-with-el-table'},
-          { text: '', link: '/configure-load-msg'},
-          { text: '', link: '/configure-plugin-opts'},
+          { text: 'Use With Filter/Tabs', link: '/guide/use-with-filter-or-tabs'},
+          { text: 'Top Direction Scroll', link: '/guide/top-dir-scroll'},
+          { text: 'Use With Element UI', link: '/guide/use-with-el-table'},
+          { text: 'Configure Load Messages', link: '/guide/configure-load-msg'},
+          // { text: 'Configure Plugin Options', link: '/guide/configure-plugin-opts'},
         ]
       }
     ],
@@ -50,6 +50,9 @@ export default defineConfig({
       alias: {
         "@": path.resolve(__dirname, "src")
       },
+    },
+    ssr: {
+        noExternal: ['element-plus']
     }
   }
 })

@@ -5,12 +5,14 @@
     </a>
     <span>Hacker News</span>
   </header>
+
   <div class="container">
+    <infinite-loading direction="top" @infinite="infiniteHandler"></infinite-loading>
     <div
       class="hacker-news-item"
       v-for="(item, $index) in list"
       :key="$index"
-      :data-num="$index + 1">
+      :data-num="list.length - $index">
       <a target="_blank" :href="item.url" v-text="item.title"></a>
       <p>
         <span v-text="item.points"></span>
@@ -26,7 +28,6 @@
           v-text="`${item.num_comments} comments`"></a>
       </p>
     </div>
-    <infinite-loading @infinite="infiniteHandler"></infinite-loading>
   </div>
 </template>
 
@@ -49,7 +50,7 @@ const infiniteHandler = ($state) => {
   }).then(({ data }) => {
     if (data.hits.length) {
       page.value += 1;
-      list.value.push(...data.hits);
+      list.value.unshift(...data.hits.reverse());
       $state.loaded();
     } else {
       $state.complete();
