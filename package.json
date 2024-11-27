@@ -1,6 +1,6 @@
 {
   "name": "@codog/vue3-infinite-loading",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "An infinite scroll plugin for Vue.js",
   "main": "./lib/index.umd.js",
   "type": "module",
