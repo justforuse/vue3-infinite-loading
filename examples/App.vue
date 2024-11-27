@@ -6,7 +6,11 @@
     <RouterLink to="/use-element">Use Element</RouterLink>
   </nav>
   <main>
-    <RouterView />
+  <router-view v-slot="{ Component }">
+    <keep-alive>
+      <component :is="Component" />
+    </keep-alive>
+  </router-view>
   </main>
 </template>
 
