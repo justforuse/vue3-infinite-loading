@@ -325,7 +325,7 @@ export default defineComponent({
       }
 
       if (!result) {
-        if (!ele || elm.tagName === 'BODY') {
+        if (!elm || elm.tagName === 'BODY') {
           result = window;
         } else if (!this.forceUseInfiniteWrapper && ['scroll', 'auto'].indexOf(getComputedStyle(elm).overflowY) > -1) {
           result = elm;
