@@ -6,12 +6,16 @@ settings:
 
 patchedDependencies:
   vitepress@1.4.1:
-    hash: kn5gjxt7c34t3gopgdhj5pdn3u
+    hash: f70e93ce8a10f003213763e0a5a66ac5df3c78f5d695db950bf7af7923e75802
     path: patches/vitepress@1.4.1.patch
 
 importers:
 
   .:
+    dependencies:
+      tiny-emitter:
+        specifier: ^2.1.0
+        version: 2.1.0
     devDependencies:
       '@babel/core':
         specifier: ^7.0.0
@@ -36,10 +40,10 @@ importers:
         version: 5.1.4(vite@5.4.9(@types/node@22.7.6)(less@3.13.1)(sass@1.80.2))(vue@3.5.12)
       '@vitepress-demo-preview/component':
         specifier: ^2.3.2
-        version: 2.3.2(vitepress@1.4.1(patch_hash=kn5gjxt7c34t3gopgdhj5pdn3u)(@algolia/client-search@4.24.0)(@types/node@22.7.6)(async-validator@4.2.5)(axios@1.7.7)(less@3.13.1)(postcss@8.4.47)(sass@1.80.2)(search-insights@2.17.2))(vue@3.5.12)
+        version: 2.3.2(vitepress@1.4.1(patch_hash=f70e93ce8a10f003213763e0a5a66ac5df3c78f5d695db950bf7af7923e75802)(@algolia/client-search@4.24.0)(@types/node@22.7.6)(async-validator@4.2.5)(axios@1.7.7)(less@3.13.1)(postcss@8.4.47)(sass@1.80.2)(search-insights@2.17.2))(vue@3.5.12)
       '@vitepress-demo-preview/plugin':
         specifier: ^1.2.3
-        version: 1.2.3(markdown-it-container@3.0.0)(vitepress@1.4.1(patch_hash=kn5gjxt7c34t3gopgdhj5pdn3u)(@algolia/client-search@4.24.0)(@types/node@22.7.6)(async-validator@4.2.5)(axios@1.7.7)(less@3.13.1)(postcss@8.4.47)(sass@1.80.2)(search-insights@2.17.2))(vue@3.5.12)
+        version: 1.2.3(markdown-it-container@3.0.0)(vitepress@1.4.1(patch_hash=f70e93ce8a10f003213763e0a5a66ac5df3c78f5d695db950bf7af7923e75802)(@algolia/client-search@4.24.0)(@types/node@22.7.6)(async-validator@4.2.5)(axios@1.7.7)(less@3.13.1)(postcss@8.4.47)(sass@1.80.2)(search-insights@2.17.2))(vue@3.5.12)
       '@vuepress/plugin-google-analytics':
         specifier: ^1.0.0-alpha.16
         version: 1.9.10
@@ -51,7 +55,7 @@ importers:
         version: 1.7.7
       babel-loader:
         specifier: ^8.0.2
-        version: 8.4.1(@babel/core@7.25.8)(webpack@4.47.0(webpack-cli@3.3.12))
+        version: 8.4.1(@babel/core@7.25.8)(webpack@4.47.0)
       babel-plugin-istanbul:
         specifier: ^5.0.1
         version: 5.2.0
@@ -75,7 +79,7 @@ importers:
         version: 6.0.0
       eslint-loader:
         specifier: ^2.1.0
-        version: 2.2.1(eslint@4.19.1)(webpack@4.47.0(webpack-cli@3.3.12))
+        version: 2.2.1(eslint@4.19.1)(webpack@4.47.0)
       eslint-plugin-import:
         specifier: ^2.14.0
         version: 2.31.0(eslint@4.19.1)
@@ -87,7 +91,7 @@ importers:
         version: 4.1.5
       html-webpack-plugin:
         specifier: ^3.2.0
-        version: 3.2.0(webpack@4.47.0(webpack-cli@3.3.12))
+        version: 3.2.0(webpack@4.47.0)
       husky:
         specifier: ^0.14.3
         version: 0.14.3
@@ -114,13 +118,13 @@ importers:
         version: 0.0.31(karma@3.1.4)
       karma-webpack:
         specifier: ^4.0.0-rc.2
-        version: 4.0.2(webpack@4.47.0(webpack-cli@3.3.12))
+        version: 4.0.2(webpack@4.47.0)
       less:
         specifier: ^3.8.1
         version: 3.13.1
       less-loader:
         specifier: ^4.1.0
-        version: 4.1.0(less@3.13.1)(webpack@4.47.0(webpack-cli@3.3.12))
+        version: 4.1.0(less@3.13.1)(webpack@4.47.0)
       mocha:
         specifier: ^5.2.0
         version: 5.2.0
@@ -151,21 +155,18 @@ importers:
       sinon-chai:
         specifier: ^2.13.0
         version: 2.14.0(chai@3.5.0)(sinon@2.4.1)
-      tiny-emitter:
-        specifier: ^2.1.0
-        version: 2.1.0
       vite:
         specifier: ^5.4.9
         version: 5.4.9(@types/node@22.7.6)(less@3.13.1)(sass@1.80.2)
       vitepress:
         specifier: ^1.4.1
-        version: 1.4.1(patch_hash=kn5gjxt7c34t3gopgdhj5pdn3u)(@algolia/client-search@4.24.0)(@types/node@22.7.6)(async-validator@4.2.5)(axios@1.7.7)(less@3.13.1)(postcss@8.4.47)(sass@1.80.2)(search-insights@2.17.2)
+        version: 1.4.1(patch_hash=f70e93ce8a10f003213763e0a5a66ac5df3c78f5d695db950bf7af7923e75802)(@algolia/client-search@4.24.0)(@types/node@22.7.6)(async-validator@4.2.5)(axios@1.7.7)(less@3.13.1)(postcss@8.4.47)(sass@1.80.2)(search-insights@2.17.2)
       vue:
         specifier: ^3.2.0
         version: 3.5.12
       vue-loader:
         specifier: ^15.7.0
-        version: 15.11.1(@vue/compiler-sfc@3.5.12)(css-loader@0.28.11)(handlebars@4.7.8)(lodash@4.17.21)(vue-template-compiler@2.7.16)(webpack@4.47.0(webpack-cli@3.3.12))
+        version: 15.11.1(@vue/compiler-sfc@3.5.12)(css-loader@0.28.11)(handlebars@4.7.8)(lodash@4.17.21)(vue-template-compiler@2.7.16)(webpack@4.47.0)
       vue-router:
         specifier: ^4.4.5
         version: 4.4.5(vue@3.5.12)
@@ -180,7 +181,7 @@ importers:
         version: 3.3.12(webpack@4.47.0)
       webpack-dev-server:
         specifier: ^3.1.8
-        version: 3.11.3(webpack-cli@3.3.12(webpack@4.47.0))(webpack@4.47.0(webpack-cli@3.3.12))
+        version: 3.11.3(webpack-cli@3.3.12)(webpack@4.47.0)
 
 packages:
 
@@ -7896,17 +7897,17 @@ snapshots:
       vite: 5.4.9(@types/node@22.7.6)(less@3.13.1)(sass@1.80.2)
       vue: 3.5.12
 
-  '@vitepress-demo-preview/component@2.3.2(vitepress@1.4.1(patch_hash=kn5gjxt7c34t3gopgdhj5pdn3u)(@algolia/client-search@4.24.0)(@types/node@22.7.6)(async-validator@4.2.5)(axios@1.7.7)(less@3.13.1)(postcss@8.4.47)(sass@1.80.2)(search-insights@2.17.2))(vue@3.5.12)':
+  '@vitepress-demo-preview/component@2.3.2(vitepress@1.4.1(patch_hash=f70e93ce8a10f003213763e0a5a66ac5df3c78f5d695db950bf7af7923e75802)(@algolia/client-search@4.24.0)(@types/node@22.7.6)(async-validator@4.2.5)(axios@1.7.7)(less@3.13.1)(postcss@8.4.47)(sass@1.80.2)(search-insights@2.17.2))(vue@3.5.12)':
     dependencies:
-      vitepress: 1.4.1(patch_hash=kn5gjxt7c34t3gopgdhj5pdn3u)(@algolia/client-search@4.24.0)(@types/node@22.7.6)(async-validator@4.2.5)(axios@1.7.7)(less@3.13.1)(postcss@8.4.47)(sass@1.80.2)(search-insights@2.17.2)
+      vitepress: 1.4.1(patch_hash=f70e93ce8a10f003213763e0a5a66ac5df3c78f5d695db950bf7af7923e75802)(@algolia/client-search@4.24.0)(@types/node@22.7.6)(async-validator@4.2.5)(axios@1.7.7)(less@3.13.1)(postcss@8.4.47)(sass@1.80.2)(search-insights@2.17.2)
       vue: 3.5.12
 
-  '@vitepress-demo-preview/plugin@1.2.3(markdown-it-container@3.0.0)(vitepress@1.4.1(patch_hash=kn5gjxt7c34t3gopgdhj5pdn3u)(@algolia/client-search@4.24.0)(@types/node@22.7.6)(async-validator@4.2.5)(axios@1.7.7)(less@3.13.1)(postcss@8.4.47)(sass@1.80.2)(search-insights@2.17.2))(vue@3.5.12)':
+  '@vitepress-demo-preview/plugin@1.2.3(markdown-it-container@3.0.0)(vitepress@1.4.1(patch_hash=f70e93ce8a10f003213763e0a5a66ac5df3c78f5d695db950bf7af7923e75802)(@algolia/client-search@4.24.0)(@types/node@22.7.6)(async-validator@4.2.5)(axios@1.7.7)(less@3.13.1)(postcss@8.4.47)(sass@1.80.2)(search-insights@2.17.2))(vue@3.5.12)':
     dependencies:
       '@flypeng/tool': 5.5.4
       markdown-it: 13.0.2
       markdown-it-container: 3.0.0
-      vitepress: 1.4.1(patch_hash=kn5gjxt7c34t3gopgdhj5pdn3u)(@algolia/client-search@4.24.0)(@types/node@22.7.6)(async-validator@4.2.5)(axios@1.7.7)(less@3.13.1)(postcss@8.4.47)(sass@1.80.2)(search-insights@2.17.2)
+      vitepress: 1.4.1(patch_hash=f70e93ce8a10f003213763e0a5a66ac5df3c78f5d695db950bf7af7923e75802)(@algolia/client-search@4.24.0)(@types/node@22.7.6)(async-validator@4.2.5)(axios@1.7.7)(less@3.13.1)(postcss@8.4.47)(sass@1.80.2)(search-insights@2.17.2)
       vue: 3.5.12
 
   '@vue/compiler-core@3.5.12':
@@ -8493,7 +8494,7 @@ snapshots:
       esutils: 2.0.3
       js-tokens: 3.0.2
 
-  babel-loader@8.4.1(@babel/core@7.25.8)(webpack@4.47.0(webpack-cli@3.3.12)):
+  babel-loader@8.4.1(@babel/core@7.25.8)(webpack@4.47.0):
     dependencies:
       '@babel/core': 7.25.8
       find-cache-dir: 3.3.2
@@ -9847,7 +9848,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-loader@2.2.1(eslint@4.19.1)(webpack@4.47.0(webpack-cli@3.3.12)):
+  eslint-loader@2.2.1(eslint@4.19.1)(webpack@4.47.0):
     dependencies:
       eslint: 4.19.1
       loader-fs-cache: 1.0.3
@@ -10613,7 +10614,7 @@ snapshots:
 
   html-void-elements@3.0.0: {}
 
-  html-webpack-plugin@3.2.0(webpack@4.47.0(webpack-cli@3.3.12)):
+  html-webpack-plugin@3.2.0(webpack@4.47.0):
     dependencies:
       html-minifier: 3.5.21
       loader-utils: 0.2.17
@@ -11131,7 +11132,7 @@ snapshots:
       colors: 1.4.0
       karma: 3.1.4
 
-  karma-webpack@4.0.2(webpack@4.47.0(webpack-cli@3.3.12)):
+  karma-webpack@4.0.2(webpack@4.47.0):
     dependencies:
       clone-deep: 4.0.1
       loader-utils: 1.4.2
@@ -11139,7 +11140,7 @@ snapshots:
       schema-utils: 1.0.0
       source-map: 0.7.4
       webpack: 4.47.0(webpack-cli@3.3.12)
-      webpack-dev-middleware: 3.7.3(webpack@4.47.0(webpack-cli@3.3.12))
+      webpack-dev-middleware: 3.7.3(webpack@4.47.0)
 
   karma@3.1.4:
     dependencies:
@@ -11195,7 +11196,7 @@ snapshots:
     optionalDependencies:
       graceful-fs: 4.2.11
 
-  less-loader@4.1.0(less@3.13.1)(webpack@4.47.0(webpack-cli@3.3.12)):
+  less-loader@4.1.0(less@3.13.1)(webpack@4.47.0):
     dependencies:
       clone: 2.1.2
       less: 3.13.1
@@ -13418,7 +13419,7 @@ snapshots:
 
   tapable@1.1.3: {}
 
-  terser-webpack-plugin@1.4.6(webpack@4.47.0(webpack-cli@3.3.12)):
+  terser-webpack-plugin@1.4.6(webpack@4.47.0):
     dependencies:
       cacache: 12.0.4
       find-cache-dir: 2.1.0
@@ -13759,7 +13760,7 @@ snapshots:
       less: 3.13.1
       sass: 1.80.2
 
-  vitepress@1.4.1(patch_hash=kn5gjxt7c34t3gopgdhj5pdn3u)(@algolia/client-search@4.24.0)(@types/node@22.7.6)(async-validator@4.2.5)(axios@1.7.7)(less@3.13.1)(postcss@8.4.47)(sass@1.80.2)(search-insights@2.17.2):
+  vitepress@1.4.1(patch_hash=f70e93ce8a10f003213763e0a5a66ac5df3c78f5d695db950bf7af7923e75802)(@algolia/client-search@4.24.0)(@types/node@22.7.6)(async-validator@4.2.5)(axios@1.7.7)(less@3.13.1)(postcss@8.4.47)(sass@1.80.2)(search-insights@2.17.2):
     dependencies:
       '@docsearch/css': 3.6.2
       '@docsearch/js': 3.6.2(@algolia/client-search@4.24.0)(search-insights@2.17.2)
@@ -13830,7 +13831,7 @@ snapshots:
 
   vue-hot-reload-api@2.3.4: {}
 
-  vue-loader@15.11.1(@vue/compiler-sfc@3.5.12)(css-loader@0.28.11)(handlebars@4.7.8)(lodash@4.17.21)(vue-template-compiler@2.7.16)(webpack@4.47.0(webpack-cli@3.3.12)):
+  vue-loader@15.11.1(@vue/compiler-sfc@3.5.12)(css-loader@0.28.11)(handlebars@4.7.8)(lodash@4.17.21)(vue-template-compiler@2.7.16)(webpack@4.47.0):
     dependencies:
       '@vue/component-compiler-utils': 3.3.0(handlebars@4.7.8)(lodash@4.17.21)
       css-loader: 0.28.11
@@ -13963,7 +13964,7 @@ snapshots:
       webpack: 4.47.0(webpack-cli@3.3.12)
       yargs: 13.3.2
 
-  webpack-dev-middleware@3.7.3(webpack@4.47.0(webpack-cli@3.3.12)):
+  webpack-dev-middleware@3.7.3(webpack@4.47.0):
     dependencies:
       memory-fs: 0.4.1
       mime: 2.6.0
@@ -13972,7 +13973,7 @@ snapshots:
       webpack: 4.47.0(webpack-cli@3.3.12)
       webpack-log: 2.0.0
 
-  webpack-dev-server@3.11.3(webpack-cli@3.3.12(webpack@4.47.0))(webpack@4.47.0(webpack-cli@3.3.12)):
+  webpack-dev-server@3.11.3(webpack-cli@3.3.12)(webpack@4.47.0):
     dependencies:
       ansi-html-community: 0.0.8
       bonjour: 3.5.0
@@ -14004,7 +14005,7 @@ snapshots:
       supports-color: 6.1.0
       url: 0.11.4
       webpack: 4.47.0(webpack-cli@3.3.12)
-      webpack-dev-middleware: 3.7.3(webpack@4.47.0(webpack-cli@3.3.12))
+      webpack-dev-middleware: 3.7.3(webpack@4.47.0)
       webpack-log: 2.0.0
       ws: 6.2.3
       yargs: 13.3.2
@@ -14046,7 +14047,7 @@ snapshots:
       node-libs-browser: 2.2.1
       schema-utils: 1.0.0
       tapable: 1.1.3
-      terser-webpack-plugin: 1.4.6(webpack@4.47.0(webpack-cli@3.3.12))
+      terser-webpack-plugin: 1.4.6(webpack@4.47.0)
       watchpack: 1.7.5
       webpack-sources: 1.4.3
     optionalDependencies:
