@@ -49,6 +49,7 @@
     </div>
   </div>
 </template>
+
 <script>
 import { defineComponent } from 'vue'
 import Spinner from './Spinner.vue';
@@ -337,7 +338,7 @@ export default defineComponent({
       return result || this.getScrollParent(elm.parentNode);
     },
   },
-  destroyed() {
+  unmounted() {
     /* istanbul ignore else */
     if (!this.status !== STATUS.COMPLETE) {
       throttleer.reset();
@@ -347,6 +348,7 @@ export default defineComponent({
   },
 })
 </script>
+
 <style lang="less" scoped>
 @deep: ~'>>>';
 
