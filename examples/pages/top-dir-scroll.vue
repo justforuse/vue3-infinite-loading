@@ -1,31 +1,44 @@
 <template>
   <header class="hacker-news-header">
-    <a target="_blank" href="http://www.ycombinator.com/">
+    <a
+      target="_blank"
+      href="http://www.ycombinator.com/"
+    >
       <img src="https://news.ycombinator.com/y18.svg">
     </a>
     <span>Hacker News</span>
   </header>
 
   <div class="container">
-    <infinite-loading direction="top" @infinite="infiniteHandler"></infinite-loading>
+    <infinite-loading
+      direction="top"
+      @infinite="infiniteHandler"
+    />
     <div
-      class="hacker-news-item"
       v-for="(item, $index) in list"
       :key="$index"
-      :data-num="list.length - $index">
-      <a target="_blank" :href="item.url" v-text="item.title"></a>
+      class="hacker-news-item"
+      :data-num="list.length - $index"
+    >
+      <a
+        target="_blank"
+        :href="item.url"
+        v-text="item.title"
+      />
       <p>
-        <span v-text="item.points"></span>
+        <span v-text="item.points" />
         points by
         <a
           target="_blank"
           :href="`https://news.ycombinator.com/user?id=${item.author}`"
-          v-text="item.author"></a>
+          v-text="item.author"
+        />
         |
         <a
           target="_blank"
           :href="`https://news.ycombinator.com/item?id=${item.objectID}`"
-          v-text="`${item.num_comments} comments`"></a>
+          v-text="`${item.num_comments} comments`"
+        />
       </p>
     </div>
   </div>

@@ -19,7 +19,7 @@ Object.defineProperty(InfiniteLoading, 'install', {
     Object.assign(config.system, options && options.system);
 
     // register component
-    Vue.component('infinite-loading', InfiniteLoading);
+    Vue.component('InfiniteLoading', InfiniteLoading);
 
     syncModeFromVue(Vue);
   },

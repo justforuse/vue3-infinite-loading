@@ -1,5 +1,5 @@
 <template>
-  <component :is="spinnerView"></component>
+  <component :is="spinnerView" />
 </template>
 
 <script>

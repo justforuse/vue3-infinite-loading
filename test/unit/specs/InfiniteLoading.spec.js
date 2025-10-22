@@ -281,17 +281,19 @@ describe('vue-infinite-loading:component', () => {
     });
 
     vm = new Vue({
-      data: {
-        currentView: 'InfiniteView',
+      components: {
+        InfiniteView,
       },
+      data: function() {
+return {
+        currentView: 'InfiniteView',
+      };
+},
       template: `
         <keep-alive>
           <component :is="currentView"></component>
         </keep-alive>
       `,
-      components: {
-        InfiniteView,
-      },
     });
 
     vm.$mount('#app');
