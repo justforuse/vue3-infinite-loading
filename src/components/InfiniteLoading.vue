@@ -347,21 +347,21 @@ export default defineComponent({
   },
 })
 </script>
-<style lang="less" scoped>
-@deep: ~'>>>';
+<style lang="scss" scoped>
+@import '../styles/spinner';
 
 .infinite-loading-container {
   clear: both;
   text-align: center;
 
-  @{deep} *[class^=loading-] {
-    @size: 28px;
+  :deep(*[class^=loading-]) {
+    $size: 28px;
     display: inline-block;
     margin: 5px 0;
-    width: @size;
-    height: @size;
-    font-size: @size;
-    line-height: @size;
+    width: $size;
+    height: $size;
+    font-size: $size;
+    line-height: $size;
     border-radius: 50%;
   }
 }

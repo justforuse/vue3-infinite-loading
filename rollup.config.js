@@ -1,6 +1,7 @@
 import vue from 'rollup-plugin-vue'
 import postcss from 'rollup-plugin-postcss'
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
+import sass from 'sass'
 
 export default [
   {
@@ -23,7 +24,12 @@ export default [
           isProduction: true
         }
       }),
-      postcss(),
+      postcss({
+        extract: false,
+        use: {
+          sass: sass
+        }
+      }),
       peerDepsExternal()
     ]
   }
