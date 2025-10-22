@@ -2,22 +2,23 @@
   <el-table
     :data="list"
     height="624"
-    border>
+    border
+  >
     <el-table-column
       prop="title"
-      label="Hacker News Title">
-    </el-table-column>
+      label="Hacker News Title"
+    />
     <el-table-column
       prop="author"
       label="Author"
-      width="125">
-    </el-table-column>
+      width="125"
+    />
 
     <template #append>
       <infinite-loading
+        force-use-infinite-wrapper=".el-table__body-wrapper .el-scrollbar__wrap"
         @infinite="infiniteHandler"
-        force-use-infinite-wrapper=".el-table__body-wrapper .el-scrollbar__wrap">
-      </infinite-loading>
+      />
     </template>
   </el-table>
 </template>

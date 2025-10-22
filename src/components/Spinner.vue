@@ -1,5 +1,5 @@
 <template>
-  <component :is="spinnerView"></component>
+  <component :is="spinnerView" />
 </template>
 
 <script>
@@ -84,6 +84,6 @@ export default {
 };
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 @import '../styles/spinner';
 </style>

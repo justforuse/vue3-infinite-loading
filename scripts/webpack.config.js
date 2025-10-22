@@ -54,7 +54,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.less$/,
+        test: /\.scss$/,
         use: [
           'vue-style-loader',
           {
@@ -72,7 +72,7 @@ module.exports = {
               ]
             }
           },
-          'less-loader'
+          'sass-loader'
         ]
       }
     ]
