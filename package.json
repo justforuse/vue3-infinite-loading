@@ -103,5 +103,6 @@
     "patchedDependencies": {
       "vitepress": "patches/vitepress.patch"
     }
-  }
+  },
+  "packageManager": "pnpm@10.20.0"
 }
