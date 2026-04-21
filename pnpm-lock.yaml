@@ -12,6 +12,10 @@ patchedDependencies:
 importers:
 
   .:
+    dependencies:
+      tiny-emitter:
+        specifier: ^2.1.0
+        version: 2.1.0
     devDependencies:
       '@commitlint/cli':
         specifier: ^20.1.0
@@ -79,9 +83,6 @@ importers:
       sinon-chai:
         specifier: ^2.13.0
         version: 2.14.0(chai@3.5.0)(sinon@2.4.1)
-      tiny-emitter:
-        specifier: ^2.1.0
-        version: 2.1.0
       vite:
         specifier: ^5.4.9
         version: 5.4.21(@types/node@24.10.0)(sass@1.93.3)
