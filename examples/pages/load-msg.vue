@@ -2,37 +2,73 @@
   <div class="tab">
     <a
       href="javascript:;"
+      :class="{ active: type === 'spinners' }"
       @click="changeType('spinners')"
-      :class="{ active: type === 'spinners' }">
+    >
       spinners
     </a>
     <a
       href="javascript:;"
+      :class="{ active: type === 'no-more' }"
       @click="changeType('no-more')"
-      :class="{ active: type === 'no-more' }">
+    >
       no-more
     </a>
     <a
       href="javascript:;"
+      :class="{ active: type === 'no-results' }"
       @click="changeType('no-results')"
-      :class="{ active: type === 'no-results' }">
+    >
       no-results
     </a>
     <a
       href="javascript:;"
+      :class="{ active: type === 'error' }"
       @click="changeType('error')"
-      :class="{ active: type === 'error' }">
+    >
       error
     </a>
   </div>
-  <infinite-loading :spinner="spinner" @infinite="infiniteHandler" ref="infiniteLoadingRef"></infinite-loading>
-  <div class="spinner-types" v-show="type === 'spinners'">
+  <infinite-loading
+    ref="infiniteLoadingRef"
+    :spinner="spinner"
+    @infinite="infiniteHandler"
+  />
+  <div
+    v-show="type === 'spinners'"
+    class="spinner-types"
+  >
     <h3>Built-in spinner types:</h3>
-    <button @click="changeSpinner('default')" :class="{ active: spinner === 'default' }">default</button>
-    <button @click="changeSpinner('spiral')" :class="{ active: spinner === 'spiral' }">spiral</button>
-    <button @click="changeSpinner('circles')" :class="{ active: spinner === 'circles' }">circles</button>
-    <button @click="changeSpinner('bubbles')" :class="{ active: spinner === 'bubbles' }">bubbles</button>
-    <button @click="changeSpinner('waveDots')" :class="{ active: spinner === 'waveDots' }">waveDots</button>
+    <button
+      :class="{ active: spinner === 'default' }"
+      @click="changeSpinner('default')"
+    >
+      default
+    </button>
+    <button
+      :class="{ active: spinner === 'spiral' }"
+      @click="changeSpinner('spiral')"
+    >
+      spiral
+    </button>
+    <button
+      :class="{ active: spinner === 'circles' }"
+      @click="changeSpinner('circles')"
+    >
+      circles
+    </button>
+    <button
+      :class="{ active: spinner === 'bubbles' }"
+      @click="changeSpinner('bubbles')"
+    >
+      bubbles
+    </button>
+    <button
+      :class="{ active: spinner === 'waveDots' }"
+      @click="changeSpinner('waveDots')"
+    >
+      waveDots
+    </button>
   </div>
 </template>
 
@@ -46,7 +82,7 @@ const infiniteLoadingRef = ref(null)
 
 const infiniteHandler = ($state) => {
   if (type.value === 'error') {
-   	setTimeout(() => {
+    setTimeout(() => {
       $state.error();
     }, 1000);
   }
@@ -54,11 +90,11 @@ const infiniteHandler = ($state) => {
 const changeType = (v) => {
   const stateChanger = infiniteLoadingRef.value.stateChanger
 
- 	type.value = v;
+  type.value = v;
 
   switch (v) {
     case 'spinners':
-     	stateChanger.reset();
+      stateChanger.reset()
       break;
 
     case 'no-more':
@@ -84,7 +120,7 @@ const changeType = (v) => {
   }
 }
 const changeSpinner = (v) => {
- 	spinner.value = v;
+  spinner.value = v;
 }
 
 </script>

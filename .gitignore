@@ -7,3 +7,5 @@ docs/.vitepress/dist
 docs/.vitepress/cache
 dist
 lib
+
+pnpm-audit-report.html

@@ -1,49 +1,69 @@
 <template>
   <div class="infinite-loading-container">
     <div
-      class="infinite-status-prompt"
       v-show="isShowSpinner"
-      :style="slotStyles.spinner">
-      <slot name="spinner" v-bind="{ isFirstLoad }">
+      class="infinite-status-prompt"
+      :style="slotStyles.spinner"
+    >
+      <slot
+        name="spinner"
+        v-bind="{ isFirstLoad }"
+      >
         <spinner :spinner="spinner" />
       </slot>
     </div>
     <div
+      v-show="isShowNoResults"
       class="infinite-status-prompt"
       :style="slotStyles.noResults"
-      v-show="isShowNoResults">
+    >
       <slot name="no-results">
-        <component v-if="slots.noResults.render" :is="slots.noResults"></component>
-        <template v-else>{{ slots.noResults }}</template>
+        <component
+          :is="slots.noResults"
+          v-if="slots.noResults.render"
+        />
+        <template v-else>
+          {{ slots.noResults }}
+        </template>
       </slot>
     </div>
     <div
+      v-show="isShowNoMore"
       class="infinite-status-prompt"
       :style="slotStyles.noMore"
-      v-show="isShowNoMore">
+    >
       <slot name="no-more">
-        <component v-if="slots.noMore.render" :is="slots.noMore"></component>
-        <template v-else>{{ slots.noMore }}</template>
+        <component
+          :is="slots.noMore"
+          v-if="slots.noMore.render"
+        />
+        <template v-else>
+          {{ slots.noMore }}
+        </template>
       </slot>
     </div>
     <div
+      v-show="isShowError"
       class="infinite-status-prompt"
       :style="slotStyles.error"
-      v-show="isShowError">
-      <slot name="error" :trigger="attemptLoad">
+    >
+      <slot
+        name="error"
+        :trigger="attemptLoad"
+      >
         <component
-          v-if="slots.error.render"
           :is="slots.error"
-          :trigger="attemptLoad">
-        </component>
+          v-if="slots.error.render"
+          :trigger="attemptLoad"
+        />
         <template v-else>
           {{ slots.error }}
           <br>
           <button
             class="btn-try-infinite"
             @click="attemptLoad"
-            v-text="slots.errorBtnText">
-          </button>
+            v-text="slots.errorBtnText"
+          />
         </template>
       </slot>
     </div>
@@ -62,6 +82,36 @@ import eventBus from '../event-bus'
 
 export default defineComponent({
   name: 'InfiniteLoading',
+  components: {
+    Spinner,
+  },
+  props: {
+    distance: {
+      type: Number,
+      default: config.props.distance,
+    },
+    spinner: String,
+    direction: {
+      type: String,
+      default: 'bottom',
+    },
+    forceUseInfiniteWrapper: {
+      type: [Boolean, String],
+      default: config.props.forceUseInfiniteWrapper,
+    },
+    identifier: {
+      type: [Number, String],
+      default: +new Date(),
+    },
+    onInfinite: Function,
+  },
+  emits: ['infinite'],
+  setup(props, { emit }) {
+    return {
+      props,
+      emit,
+    };
+  },
   data() {
     return {
       scrollParent: null,
@@ -70,9 +120,6 @@ export default defineComponent({
       status: STATUS.READY,
       slots: config.slots,
     };
-  },
-  components: {
-    Spinner,
   },
   computed: {
     isShowSpinner() {
@@ -118,25 +165,6 @@ export default defineComponent({
 
       return styles;
     },
-  },
-  props: {
-    distance: {
-      type: Number,
-      default: config.props.distance,
-    },
-    spinner: String,
-    direction: {
-      type: String,
-      default: 'bottom',
-    },
-    forceUseInfiniteWrapper: {
-      type: [Boolean, String],
-      default: config.props.forceUseInfiniteWrapper,
-    },
-    identifier: {
-      default: +new Date(),
-    },
-    onInfinite: Function,
   },
   watch: {
     identifier() {
@@ -235,10 +263,6 @@ export default defineComponent({
         throttleer.reset();
       },
     };
-
-    if (this.onInfinite) {
-      warn(WARNINGS.INFINITE_EVENT);
-    }
   },
   /**
    * To adapt to keep-alive feature, but only work on Vue 2.2.0 and above, see: https://vuejs.org/v2/api/#keep-alive
@@ -252,6 +276,14 @@ export default defineComponent({
   },
   activated() {
     this.scrollParent.addEventListener('scroll', this.scrollHandler, evt3rdArg);
+  },
+  unmounted() {
+    /* istanbul ignore else */
+    if (!this.status !== STATUS.COMPLETE) {
+      throttleer.reset();
+      scrollBarStorage.remove(this.scrollParent);
+      this.scrollParent.removeEventListener('scroll', this.scrollHandler, evt3rdArg);
+    }
   },
   methods: {
     /**
@@ -337,31 +369,23 @@ export default defineComponent({
       return result || this.getScrollParent(elm.parentNode);
     },
   },
-  destroyed() {
-    /* istanbul ignore else */
-    if (!this.status !== STATUS.COMPLETE) {
-      throttleer.reset();
-      scrollBarStorage.remove(this.scrollParent);
-      this.scrollParent.removeEventListener('scroll', this.scrollHandler, evt3rdArg);
-    }
-  },
 })
 </script>
-<style lang="less" scoped>
-@deep: ~'>>>';
+<style lang="scss" scoped>
+@import '../styles/spinner';
 
 .infinite-loading-container {
   clear: both;
   text-align: center;
 
-  @{deep} *[class^=loading-] {
-    @size: 28px;
+  :deep(*[class^=loading-]) {
+    $size: 28px;
     display: inline-block;
     margin: 5px 0;
-    width: @size;
-    height: @size;
-    font-size: @size;
-    line-height: @size;
+    width: $size;
+    height: $size;
+    font-size: $size;
+    line-height: $size;
     border-radius: 50%;
   }
 }
