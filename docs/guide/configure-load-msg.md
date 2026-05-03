@@ -24,13 +24,13 @@ We can use the [`v-slot` directive] (https://vuejs.org/guide/components/slots.ht
 <infinite-loading>
   <template #spinner>
     <div>Loading...</div>
-  <template>
+  </template>
   <template #no-more>
     <div>No more message</div>
-  <template>
+  </template>
   <template #no-results>
     <div>No results message</div>
-  <template>
+  </template>
 </infinite-loading>
 ```
 
